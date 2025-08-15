@@ -1,36 +1,25 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
-let attempts = 0;
-function checkGuess() {
-    let guess = document.getElementById("guess").value;
-    let message = document.getElementById("message");
-    let attemptsDisplay = document.getElementById("attempts");
+document.getElementById("checkBtn").addEventListener("click", function() {
+    const guess = parseInt(document.getElementById("guessInput").value);
+    const result = document.getElementById("result");
 
-    if (!guess || guess < 1 || guess > 100) {
-        message.textContent = "⚠️ Please enter a valid number between 1 and 100!";
+    if (isNaN(guess)) {
+        result.textContent = "Please enter a valid number!";
+        result.style.background = "#ffcccc";
+        result.style.color = "#a10000";
         return;
     }
 
-    attempts++;
-
-    if (guess == randomNumber) {
-        message.textContent = `🎉 Correct! The number was ${randomNumber}`;
-        message.style.color = "green";
-        document.getElementById("resetBtn").style.display = "inline-block";
-    } else if (guess > randomNumber) {
-        message.textContent = "📉 Too high! Try again.";
-        message.style.color = "red";
+    if (guess === randomNumber) {
+        result.textContent = "🎉 Correct! You guessed the number!";
+        result.style.background = "#d4fcd4";
+        result.style.color = "#006400";
+    } else if (guess < randomNumber) {
+        result.textContent = "📉 Too low! Try again.";
+        result.style.background = "#fff0b3";
+        result.style.color = "#b36b00";
     } else {
-        message.textContent = "📈 Too low! Try again.";
-        message.style.color = "red";
+        result.textContent = "📈 Too high! Try again.";
+        result.style.background = "#fff0b3";
+        result.style.color = "#b36b00";
     }
-
-    attemptsDisplay.textContent = `Attempts: ${attempts}`;
-}
-function resetGame() {
-    randomNumber = Math.floor(Math.random() * 100) + 1;
-    attempts = 0;
-    document.getElementById("message").textContent = "";
-    document.getElementById("attempts").textContent = "";
-    document.getElementById("guess").value = "";
-    document.getElementById("resetBtn").style.display = "none";
-}
+});

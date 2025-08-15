@@ -1,77 +1,71 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Animated Gradient Background */
+/* Apply a gradient background */
 body {
-  height: 100vh;
-  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
-  background-size: 400% 400%;
-  animation: gradientBG 10s ease infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Game Container with Glassmorphism */
+/* Main container styling */
 .container {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  width: 350px;
-  color: #fff;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Heading */
+/* Title */
 h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-/* Input Field */
-input {
-  padding: 10px;
-  width: 70%;
-  border: none;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  outline: none;
+/* Input styling */
+input[type="number"] {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 60%;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 10px;
 }
 
-/* Button */
+/* Button styling */
 button {
-  background: linear-gradient(90deg, #ff758c, #ff7eb3);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 10px 20px;
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
 }
 
 button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(255, 118, 136, 0.5);
+    background: #ff2e44;
 }
 
-/* Result Message */
-#result {
-  font-size: 18px;
-  margin-top: 20px;
+/* Message styling */
+#message {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
