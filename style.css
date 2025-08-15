@@ -1,97 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* style.css */
 
+/* Modern Gradient Animated Background */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: #333;
 }
 
-.game-container {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-    animation: fadeIn 0.8s ease-in-out;
+/* Smooth Gradient Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5px;
+/* Game Container */
+#game {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  max-width: 400px;
 }
 
-.subtitle {
-    font-size: 16px;
-    opacity: 0.8;
-    margin-bottom: 20px;
-}
-
-.input-container {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-input {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    width: 60%;
-    text-align: center;
-    outline: none;
-}
-
+/* Buttons */
 button {
-    padding: 10px 18px;
-    font-size: 16px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #5b86e5, #36d1dc);
 }
 
-#message {
-    font-weight: bold;
-    margin-top: 15px;
-    font-size: 18px;
-    min-height: 24px;
+/* Input Field */
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  font-size: 1rem;
 }
 
-#attempts {
-    margin-top: 8px;
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-#resetBtn {
-    margin-top: 15px;
-    background: linear-gradient(135deg, #28a745, #85dcb8);
-}
-
-footer {
-    padding: 10px;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Heading */
+h1 {
+  color: #222;
+  margin-bottom: 15px;
 }
