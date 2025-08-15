@@ -8,14 +8,24 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>Number Guessing Game 🎯</h1>
-        <p>Guess a number between 1 and 100</p>
-        <input type="number" id="guess" placeholder="Enter your guess" min="1" max="100">
-        <button onclick="checkGuess()">Submit Guess</button>
+        <h1>🎯 Number Guessing Game</h1>
+        <p class="subtitle">Can you guess the secret number? 🤔</p>
+
+        <div class="input-container">
+            <input type="number" id="guess" placeholder="Enter your guess" min="1" max="100">
+            <button onclick="checkGuess()">🔥 Guess</button>
+        </div>
+
         <p id="message"></p>
         <p id="attempts"></p>
-        <button onclick="resetGame()" id="resetBtn" style="display:none;">Play Again</button>
+
+        <button onclick="resetGame()" id="resetBtn" style="display:none;">🔄 Play Again</button>
     </div>
+
+    <footer>
+        <p>💻 Developed by <strong>Saikumar</strong></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
